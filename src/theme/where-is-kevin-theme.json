@@ -1,0 +1,48 @@
+{
+  "fileInput": {
+    "field": {}
+  },
+  "drawer": {
+    "root": {
+      "backdrop": "fixed inset-0 z-[8000] bg-gray-900/50 dark:bg-gray-900/80"
+    }
+  },
+
+  "modal": {
+    "content": {
+      "inner": "relative flex max-h-[90dvh] flex-col rounded-lg bg-white shadow dark:bg-gray-700"
+    }
+  },
+  "button": {
+    "label": "text-md font-semibold",
+    "base": "items-center enabled:hover:bg-primary-1000 flex justify-center",
+    "inner": {
+      "base": "text-xs enabled:hover:bg-primary-800"
+    },
+    "size": {
+      "lg": "px-5 text-md font-semibold"
+    }
+  },
+  "progress": {
+    "label": "",
+    "bar": "bg-red-1000",
+    "color": {
+      "primary": "bg-primary-1000",
+      "blue": "bg-red-1000"
+    }
+  },
+  "textarea": {
+    "base": "bg-white block w-full border disabled:cursor-not-allowed disabled:opacity-50 border-gray-300  focus:border-primary-1000 focus:ring-primary-1000 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-1000 dark:focus:ring-primary-1000 p-2.5 rounded-lg text-[16px] text-gray-500"
+  },
+  "textInput": {
+    "field": {
+      "input": {
+        "withAddon": {
+          "on": "bg-white block w-full border disabled:cursor-not-allowed disabled:opacity-50 border-gray-300  focus:border-primary-1000 focus:ring-primary-1000 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-1000 dark:focus:ring-primary-1000 p-2.5 rounded-lg text-[16px] text-gray-500",
+          "off": "bg-white block w-full border disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-primary-1000 focus:ring-primary-1000 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-1000 dark:focus:ring-primary-1000 p-2.5 rounded-lg text-[16px] text-gray-500"
+        },
+        "base": "text-[#444442]"
+      }
+    }
+  }
+}

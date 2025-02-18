@@ -1,0 +1,140 @@
+'use client'
+
+import React, {useEffect, useRef, useState} from "react";
+import {ProgressBar} from "@/components/ProgressBar";
+import {Button, Spinner} from "flowbite-react";
+import {BottomBar} from "@/components/BottomBar";
+import {QuestionnaireStepOne} from "@/components/questionnaire/QuestionnaireStepOne";
+import {QuestionnaireStepTwo} from "@/components/questionnaire/QuestionnaireStepTwo";
+import {QuestionnaireStepThree} from "@/components/questionnaire/QuestionnaireStepThree";
+import {QuestionnaireStepFour} from "@/components/questionnaire/QuestionnaireStepFour";
+import useQuestionnaireStore from "@/stores/questionnaire.store";
+
+import {TransitionRouter, useTransitionRouter} from 'next-transition-router';
+import {animate} from 'framer-motion/dom';
+
+export default function UserLayout({
+                                       children, // will be a page or nested layout
+                                   }: {
+    children: React.ReactNode
+}) {
+    const wrapperRef = useRef<HTMLDivElement>(null!);
+    const router = useTransitionRouter()
+    const animatedContent = useRef<HTMLDivElement>(null)
+    const [currentStep, setCurrentStep] = useState(0);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        location: '',
+        aboutYou: [],
+        likedEvents: [],
+        dislikedEvents: [],
+    });
+    const [isLoading, setLoading] = useState(false)
+    const [step, setStep] = useState(3)
+    const steps = [
+        {step: 1, content: () => <><QuestionnaireStepOne/></>},
+        {step: 2, content: () => <><QuestionnaireStepTwo/></>},
+        {step: 3, content: () => <><QuestionnaireStepThree/></>},
+        {step: 4, content: () => <><QuestionnaireStepFour/></>},
+    ]
+
+    const pages = [
+        '/questionnaire/personal-information',
+        '/questionnaire/your-likes'
+    ]
+
+    const [nextPage, setNextPage] = useState('/questionnaire/personal-information')
+
+    const nextStep = () => {
+        // let redirectTo = '/personal-information'
+        //
+        // console.log(currentStep)
+        // switch (currentStep) {
+        //     case 0:
+        //         redirectTo = '/personal-information'
+        //         setNextPage('/questionnaire/your-likes')
+        //         break
+        //     case 1:
+        //         redirectTo = '/your-likes'
+        //         break
+        // }
+        //
+        //
+        // if (steps[currentStep + 1] === undefined) {
+        //     console.log('router push')
+        //     router.push('/user/profile')
+        //     // setLoading(true)
+        //     return
+        // }
+        // setStep(step + 1)
+        // setCurrentStep(currentStep + 1)
+    }
+
+    const {stepsCompleted, progress, setProgress} = useQuestionnaireStore(state => state)
+
+    useEffect(() => {
+        if (progress === 100) {
+            setCurrentStep(3)
+        }
+    }, [progress]);
+
+    return (
+        <div className={'container h-svh flex flex-col font-ppmori'}>
+            <div className={'flex items-center justify-center mb-10 pt-11'}>
+                <img height={'auto'} width={'40px'} src={'/images/logo-small.png'} alt={'Where is Kevin - logo'}/>
+            </div>
+
+            <div className={'mb-16'}>
+                <ProgressBar/>
+            </div>
+
+            {/* Animated Content Transition */}
+            <div>
+                <TransitionRouter
+                    auto
+                    leave={(next) => {
+                        setCurrentStep(currentStep + 1)
+                        setNextPage(pages[currentStep + 1])
+                        animate(
+                            wrapperRef.current,
+                            {opacity: [1, 0]},
+                            {duration: 0.1, onComplete: next}
+                        );
+                    }}
+                    enter={(next) => {
+                        animate(
+                            wrapperRef.current,
+                            {opacity: [0, 1]},
+                            {duration: 0.1, onComplete: next}
+                        );
+                    }}
+                >
+                    <div ref={wrapperRef}>{children}</div>
+                </TransitionRouter>
+            </div>
+
+            {currentStep}
+            {nextPage}
+            {stepsCompleted[currentStep] ? 'completed' : 'not completed'}
+            {currentStep <= 3 &&
+                <>
+                    <Button onClick={nextStep}
+                            size={'lg'}
+                            href={nextPage}
+                            disabled={!stepsCompleted[currentStep]}
+                            className={'items-center border border-transparent focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:focus:ring-cyan-800 dark:enabled:hover:bg-cyan-700 rounded-lg h-10 bg-primary-1000 text-[#F5F5F5] w-full enabled:hover:bg-primary-1000 mt-auto mb-10 min-h-10'}>
+                        {isLoading ? <Spinner size={'md'}/> :
+                            <>
+                                {currentStep === 3 ? 'Finish' : 'Next'}
+                            </>
+
+                        }
+                    </Button>
+                </>
+            }
+
+            {currentStep > 3 && <BottomBar/>}
+        </div>
+    )
+}

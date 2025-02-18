@@ -1,0 +1,6 @@
+.card {
+    border-radius: 2rem;
+    aspect-ratio: 310/500;
+    border: none;
+    /*background-color: #F2F2F3;*/
+}

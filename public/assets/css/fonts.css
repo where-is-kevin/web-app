@@ -1,0 +1,123 @@
+:root {
+    --font-path: './fonts'; /* Change this path as needed */
+}
+
+/* PPMori Book */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-Book.woff2') format('woff2'),
+url('/fonts/PPMori-Book.woff') format('woff'),
+url('/fonts/PPMori-Book.ttf') format('truetype'),
+url('/fonts/PPMori-Book.otf') format('opentype'),
+url('/fonts/PPMori-Book.eot');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* PPMori Book Italic */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-BookItalic.woff2') format('woff2'),
+url('/fonts/PPMori-BookItalic.woff') format('woff'),
+url('/fonts/PPMori-BookItalic.ttf') format('truetype'),
+url('/fonts/PPMori-BookItalic.otf') format('opentype'),
+url('/fonts/PPMori-BookItalic.eot');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* PPMori ExtraBold */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-ExtraBold.woff2') format('woff2'),
+url('/fonts/PPMori-ExtraBold.woff') format('woff'),
+url('/fonts/PPMori-ExtraBold.ttf') format('truetype'),
+url('/fonts/PPMori-ExtraBold.otf') format('opentype'),
+url('/fonts/PPMori-ExtraBold.eot');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* PPMori ExtraBold Italic */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-ExtraBoldItalic.woff2') format('woff2'),
+url('/fonts/PPMori-ExtraBoldItalic.woff') format('woff'),
+url('/fonts/PPMori-ExtraBoldItalic.ttf') format('truetype'),
+url('/fonts/PPMori-ExtraBoldItalic.otf') format('opentype'),
+url('/fonts/PPMori-ExtraBoldItalic.eot');
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* PPMori Extralight */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-Extralight.woff2') format('woff2'),
+url('/fonts/PPMori-Extralight.woff') format('woff'),
+url('/fonts/PPMori-Extralight.ttf') format('truetype'),
+url('/fonts/PPMori-Extralight.otf') format('opentype'),
+url('/fonts/PPMori-Extralight.eot');
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* PPMori Extralight Italic */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-ExtralightItalic.woff2') format('woff2'),
+url('/fonts/PPMori-ExtralightItalic.woff') format('woff'),
+url('/fonts/PPMori-ExtralightItalic.ttf') format('truetype'),
+url('/fonts/PPMori-ExtralightItalic.otf') format('opentype'),
+url('/fonts/PPMori-ExtralightItalic.eot');
+    font-weight: 200;
+    font-style: italic;
+}
+
+/* PPMori Regular */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-Regular.woff2') format('woff2'),
+url('/fonts/PPMori-Regular.woff') format('woff'),
+url('/fonts/PPMori-Regular.ttf') format('truetype'),
+url('/fonts/PPMori-Regular.otf') format('opentype'),
+url('/fonts/PPMori-Regular.eot');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* PPMori Regular Italic */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-RegularItalic.woff2') format('woff2'),
+url('/fonts/PPMori-RegularItalic.woff') format('woff'),
+url('/fonts/PPMori-RegularItalic.ttf') format('truetype'),
+url('/fonts/PPMori-RegularItalic.otf') format('opentype'),
+url('/fonts/PPMori-RegularItalic.eot');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* PPMori SemiBold */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-SemiBold.woff2') format('woff2'),
+url('/fonts/PPMori-SemiBold.woff') format('woff'),
+url('/fonts/PPMori-SemiBold.ttf') format('truetype'),
+url('/fonts/PPMori-SemiBold.otf') format('opentype'),
+url('/fonts/PPMori-SemiBold.eot');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* PPMori SemiBold Italic */
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-SemiBoldItalic.woff2') format('woff2'),
+url('/fonts/PPMori-SemiBoldItalic.woff') format('woff'),
+url('/fonts/PPMori-SemiBoldItalic.ttf') format('truetype'),
+url('/fonts/PPMori-SemiBoldItalic.otf') format('opentype'),
+url('/fonts/PPMori-SemiBoldItalic.eot');
+    font-weight: 600;
+    font-style: italic;
+}
