@@ -3,6 +3,7 @@ import {Avatar} from "flowbite-react";
 import {CalendarIcon} from "@/components/icons/CalendarIcon";
 import {BellIcon} from "@/components/icons/BellIcon";
 import {CogIcon} from "@/components/icons/CogIcon";
+import { ChatIcon } from "./icons/Chat";
 import Link from "next/link";
 import useUserStore from "@/stores/user.store";
 
@@ -63,6 +64,12 @@ export function BottomBar() {
                     className={'text-[11px] text-[#4A4A4F] flex flex-col items-center justify-between py-2 gap-1.5 bg-white w-1/5'}>
                     <BellIcon/>
                     <div className={'text-[11px] text-[#4A4A4F]'}>Notifications</div>
+                </Link>
+
+                <Link href={'/user/chat'}
+                    className={'text-[11px] text-[#4A4A4F] flex flex-col items-center justify-between py-2 gap-1.5 bg-white w-1/5'}>
+                    <ChatIcon/>
+                    <div className={'text-[11px] text-[#4A4A4F]'}>KevinGPT</div>
                 </Link>
 
                 <Link href={'/user/settings'}
