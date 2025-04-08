@@ -60,16 +60,16 @@ export function BottomBar() {
                 </Link>
 
 
-                <Link href={'/user/notifications'}
+{/*                 <Link href={'/user/notifications'}
                     className={'text-[11px] text-[#4A4A4F] flex flex-col items-center justify-between py-2 gap-1.5 bg-white w-1/5'}>
                     <BellIcon/>
                     <div className={'text-[11px] text-[#4A4A4F]'}>Notifications</div>
-                </Link>
+                </Link> */}
 
                 <Link href={'/user/chat'}
                     className={'text-[11px] text-[#4A4A4F] flex flex-col items-center justify-between py-2 gap-1.5 bg-white w-1/5'}>
                     <ChatIcon/>
-                    <div className={'text-[11px] text-[#4A4A4F]'}>KevinGPT</div>
+                    <div className={'text-[11px] text-[#4A4A4F]'}>Ask Kevin</div>
                 </Link>
 
                 <Link href={'/user/settings'}
